@@ -1,14 +1,10 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-	"name": "Ubuntu",
+	"name": "Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
 	"features": {
-		"ghcr.io/devcontainers/features/conda:1": {
-			"addCondaForge": true,
-			"version": "latest"
-		},
 		"ghcr.io/devcontainers/features/node:1": {
 			"nodeGypDependencies": true,
 			"installYarnUsingApt": true,
@@ -16,11 +12,15 @@
 			"pnpmVersion": "latest",
 			"nvmVersion": "latest"
 		},
+		"ghcr.io/rocker-org/devcontainer-features/miniforge:2": {
+			"version": "latest",
+			"variant": "Miniforge3"
+		},
 		"ghcr.io/itsmechlark/features/postgresql:1": {
 			"version": "16"
 		},
 		"ghcr.io/itsmechlark/features/redis-server:1": {
-			"version": "latest"
+			"version": "7"
 		}
 	}
 
@@ -29,9 +29,6 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
